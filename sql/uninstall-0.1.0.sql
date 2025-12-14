@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS `glpi_plugin_linesmanager_configs`;
-DROP TABLE IF EXISTS `glpi_plugin_linesmanager_ranges`;
-DROP TABLE IF EXISTS `glpi_plugin_linesmanager_numplans`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_lines`;
+DROP TABLE IF EXISTS `glpi_plugin_linesmanager_numplans`;
+DROP TABLE IF EXISTS `glpi_plugin_linesmanager_ranges`;
+DROP TABLE IF EXISTS `glpi_plugin_linesmanager_configs`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_categories`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_extensionmobilities`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_forwards`;

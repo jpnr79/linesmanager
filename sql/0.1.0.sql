@@ -74,33 +74,33 @@ ALTER TABLE `glpi_plugin_linesmanager_ranges` ADD UNIQUE(`max_number`);
 CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_numplans` (
     `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `number` int(11) NOT NULL UNIQUE default 0,
-    `range` integer default NULL
+    `range` int(11) unsigned default NULL
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_lines` (
     `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `items_id` int(11) default NULL,
+    `items_id` int(11) unsigned default NULL,
     `itemtype` varchar(100) default NULL,
-    `entities_id` int(11) NOT NULL default 0,
+    `entities_id` int(11) unsigned NOT NULL default 0,
     `locations_id` int(11) unsigned NOT NULL default 0,
     `states_id` int(11) unsigned NOT NULL default 0,
     `name` varchar(200) NOT NULL default '',
     `surname` varchar(200) NOT NULL default '',
-    `numplan` integer NOT NULL,
+    `numplan` int(11) unsigned NOT NULL,
     `description` varchar(200) default '',
     `user_id` varchar(50) NOT NULL default '',
-    `linegroup` integer default NULL,
-    `pickupgroup` integer default NULL,
-    `category` integer default NULL,
-    `extensionmobility` integer default NULL,
+    `linegroup` int(11) unsigned default NULL,
+    `pickupgroup` int(11) unsigned default NULL,
+    `category` int(11) unsigned default NULL,
+    `extensionmobility` int(11) unsigned default NULL,
     `loginout` tinyint(1) default '0',
     `autoanswer` tinyint(1) default '0',
     `autoanswerpass` varchar(20) default '0',
     `lockcallin` tinyint(1) default '0',
     `lockcallout` tinyint(1) default '0',
-    `forward` integer default NULL,
+    `forward` int(11) unsigned default NULL,
     `forwardtimeout` time default null,
-    `timeslot` integer default null,
-    `ddiin` integer default NULL,
-    `ddiout` integer default NULL
+    `timeslot` int(11) unsigned default null,
+    `ddiin` int(11) unsigned default NULL,
+    `ddiout` int(11) unsigned default NULL
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

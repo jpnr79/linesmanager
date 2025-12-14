@@ -1,14 +1,15 @@
-CREATE TABLE `glpi_plugin_linesmanager_configs` (
-        `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-        `type` varchar(32) NOT NULL default '' UNIQUE,
-        `value` varchar(32) NOT NULL default ''
+
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_configs` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `type` varchar(32) NOT NULL default '' UNIQUE,
+    `value` varchar(32) NOT NULL default ''
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-INSERT INTO `glpi_plugin_linesmanager_configs`(type, value) VALUES ('automate_description',     '0');
-INSERT INTO `glpi_plugin_linesmanager_configs`(type, value) VALUES ('automate_user_id',         '0');
-INSERT INTO `glpi_plugin_linesmanager_configs`(type, value) VALUES ('fill_contact_information', '0');
+INSERT IGNORE INTO `glpi_plugin_linesmanager_configs`(type, value) VALUES ('automate_description',     '0');
+INSERT IGNORE INTO `glpi_plugin_linesmanager_configs`(type, value) VALUES ('automate_user_id',         '0');
+INSERT IGNORE INTO `glpi_plugin_linesmanager_configs`(type, value) VALUES ('fill_contact_information', '0');
 
 CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_ranges` ( 
-    `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT , 
+    `id` INT(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT , 
     `entities_id` int(11) NOT NULL default 0, 
     `is_recursive` tinyint(1) NOT NULL default 0,
     `name` varchar(100) NOT NULL default '',

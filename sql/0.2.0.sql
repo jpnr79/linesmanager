@@ -1,4 +1,4 @@
-ALTER TABLE `glpi_plugin_linesmanager_lines` ADD `locations_id` INT(11) NOT NULL DEFAULT '0' AFTER `entities_id`;
+ALTER TABLE `glpi_plugin_linesmanager_lines` ADD `locations_id` INT(11) UNSIGNED NOT NULL DEFAULT '0' AFTER `entities_id`;
 
 UPDATE `glpi_plugin_linesmanager_lines` l INNER JOIN `glpi_computers` c         SET l.`locations_id` = c.locations_id WHERE l.itemtype = 'Computer' and l.items_id = c.id;
 UPDATE `glpi_plugin_linesmanager_lines` l INNER JOIN `glpi_phones` c            SET l.`locations_id` = c.locations_id WHERE l.itemtype = 'Phone' and l.items_id = c.id;

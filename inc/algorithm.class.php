@@ -41,7 +41,7 @@ class PluginLinesmanagerAlgorithm extends PluginLinesmanagerLine {
     /**
      * Get name of this type
      *
-     * @return text name of this type by language of the user connected
+    * @return string name of this type by language of the user connected
      *
      * */
     static function getTypeName($nb = 1) {

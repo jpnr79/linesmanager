@@ -4,9 +4,9 @@ CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_configs` (
     `type` varchar(32) NOT NULL default '' UNIQUE,
     `value` varchar(32) NOT NULL default ''
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-INSERT IGNORE INTO `glpi_plugin_linesmanager_configs`(type, value) VALUES ('automate_description',     '0');
-INSERT IGNORE INTO `glpi_plugin_linesmanager_configs`(type, value) VALUES ('automate_user_id',         '0');
-INSERT IGNORE INTO `glpi_plugin_linesmanager_configs`(type, value) VALUES ('fill_contact_information', '0');
+INSERT INTO `glpi_plugin_linesmanager_configs` (type, value) VALUES ('automate_description', '0') ON DUPLICATE KEY UPDATE value = value;
+INSERT INTO `glpi_plugin_linesmanager_configs` (type, value) VALUES ('automate_user_id', '0') ON DUPLICATE KEY UPDATE value = value;
+INSERT INTO `glpi_plugin_linesmanager_configs` (type, value) VALUES ('fill_contact_information', '0') ON DUPLICATE KEY UPDATE value = value;
 
 CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_ranges` ( 
     `id` INT(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT , 

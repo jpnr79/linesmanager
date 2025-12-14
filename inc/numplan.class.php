@@ -86,7 +86,7 @@ class PluginLinesmanagerNumplan extends PluginLinesmanagerLine {
         return false;
     }
     
-    static function canDelete() {
+    static function canDelete(): bool {
         return false;
     }
     

@@ -57,7 +57,7 @@ class PluginLinesmanagerLocation extends PluginLinesmanagerLine {
         return Location::getTypeName($nb);
     }
     
-    function canEdit($ID) {
+    function canEdit($ID): bool {
         return false;
     }
 }

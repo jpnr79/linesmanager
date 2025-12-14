@@ -90,7 +90,7 @@ class PluginLinesmanagerNumplan extends PluginLinesmanagerLine {
         return false;
     }
     
-    static function canPurge() {
+    static function canPurge(): bool {
         return false;
     }
     

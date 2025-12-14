@@ -25,7 +25,7 @@ class PluginLinesmanagerTimeslot extends PluginLinesmanagerLine {
 
     /**
      * Belongs to this tables. Needed for search used and delete.
-     * @var type 
+    * @var string
      */
     static public $belongsTo = array(
         "PluginLinesmanagerLine"
@@ -67,7 +67,7 @@ class PluginLinesmanagerTimeslot extends PluginLinesmanagerLine {
     /**
      * Get name of this type
      *
-     * @return text name of this type by language of the user connected
+    * @return string name of this type by language of the user connected
      *
      * */
     static function getTypeName($nb = 1) {

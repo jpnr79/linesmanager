@@ -30,13 +30,13 @@ class PluginLinesmanagerNumplan extends PluginLinesmanagerLine {
     
     /**
      * Name for profile rights.
-     * @var type 
+     * @var string
      */
     static $rightname = 'entity';
     
     /**
      * Belongs to this tables. Needed for search used and delete.
-     * @var type 
+     * @var string
      */
     static public $belongsTo = array(
         "PluginLinesmanagerLine", 
@@ -74,6 +74,10 @@ class PluginLinesmanagerNumplan extends PluginLinesmanagerLine {
         );
     }
     
+    /**
+     * Get name of this type
+     * @return string name of this type by language of the user connected
+     */
     static function getTypeName($nb = 1) {
         return _n('Number', 'Numbers', $nb, 'linesmanager');
     }

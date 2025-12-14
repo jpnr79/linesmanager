@@ -40,7 +40,7 @@ class PluginLinesmanagerLocation extends PluginLinesmanagerLine {
     
     /**
      * Specific getTable for this class.
-     * @param type $classname
+    * @param string $classname
      * @return string
      */
     static function getTable($classname = null) {
@@ -50,7 +50,7 @@ class PluginLinesmanagerLocation extends PluginLinesmanagerLine {
     /**
      * Get name of this type
      *
-     * @return text name of this type by language of the user connected
+    * @return string name of this type by language of the user connected
      *
      * */
     static function getTypeName($nb = 1) {

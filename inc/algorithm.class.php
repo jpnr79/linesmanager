@@ -48,7 +48,7 @@ class PluginLinesmanagerAlgorithm extends PluginLinesmanagerLine {
         return _n('Algorithm', 'Algorithms', $nb, 'linesmanager');
     }
     
-    function canEdit($ID) {
+    public function canEdit($ID): bool {
         return false;
     }
 }

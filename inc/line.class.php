@@ -674,7 +674,9 @@ class PluginLinesmanagerLine extends CommonDropdown {
         $changes[0] = 0;
         $changes[1] = "";
         $changes[2] = $this->getStringNameForHistory();
-        Log::history($this->fields["items_id"], $this->fields["itemtype"], $changes, __CLASS__, Log::HISTORY_ADD_SUBITEM);
+        if (!empty($this->fields["items_id"]) && !empty($this->fields["itemtype"])) {
+            Log::history($this->fields["items_id"], $this->fields["itemtype"], $changes, __CLASS__, Log::HISTORY_ADD_SUBITEM);
+        }
     }
 
     /**
@@ -700,7 +702,9 @@ class PluginLinesmanagerLine extends CommonDropdown {
         $changes[0] = 0;
         $changes[1] = $this->getStringNameForHistory();
         $changes[2] = "";
-        Log::history($this->fields["items_id"], $this->fields["itemtype"], $changes, __CLASS__, Log::HISTORY_DELETE_SUBITEM);
+        if (!empty($this->fields["items_id"]) && !empty($this->fields["itemtype"])) {
+            Log::history($this->fields["items_id"], $this->fields["itemtype"], $changes, __CLASS__, Log::HISTORY_DELETE_SUBITEM);
+        }
     }
 
     /**

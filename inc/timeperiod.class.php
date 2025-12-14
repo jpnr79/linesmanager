@@ -21,7 +21,7 @@ if (!defined('GLPI_ROOT')) {
     die("Sorry. You can't access directly to this file");
 }
 
-class PluginLinesmanagerTimeperiod extends PluginLinesmanagerLine {
+class PluginLinesmanagerTimeperiod extends CommonDropdown {
 
     /**
      * Belongs to this tables. Needed for search used and delete.

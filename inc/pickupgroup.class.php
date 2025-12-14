@@ -21,14 +21,14 @@ if (!defined('GLPI_ROOT')) {
     die("Sorry. You can't access directly to this file");
 }
 
-class PluginLinesmanagerPickupgroup extends PluginLinesmanagerLine {
+class PluginLinesmanagerPickupgroup extends CommonDropdown {
 
     /**
      * Belongs to this tables. Needed for search used and delete.
      * @var type 
      */
     static public $belongsTo = array(
-        "PluginLinesmanagerLine"
+        // Removed reference to PluginLinesmanagerLine for GLPI 11 compatibility
     );
     
     function __construct() {

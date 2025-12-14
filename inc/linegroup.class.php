@@ -21,7 +21,7 @@ if (!defined('GLPI_ROOT')) {
     die("Sorry. You can't access directly to this file");
 }
 
-class PluginLinesmanagerLinegroup extends PluginLinesmanagerLine {
+class PluginLinesmanagerLinegroup extends CommonDropdown {
 
     /**
      * Belongs to this tables. Needed for search used and delete.
@@ -111,7 +111,7 @@ class PluginLinesmanagerLinegroup extends PluginLinesmanagerLine {
      *
      * @param $input datas used to update the item
      *
-     * @return the modified $input array
+    * @return array Modified input array
      */
     function prepareInputForAdd($input) {
         if ($input['name'] == "") {
@@ -125,7 +125,7 @@ class PluginLinesmanagerLinegroup extends PluginLinesmanagerLine {
      *
      * @param $input datas used to update the item
      *
-     * @return the modified $input array
+    * @return array Modified input array
      * */
     function prepareInputForUpdate($input) {
         if ($input['name'] == "") {

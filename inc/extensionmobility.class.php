@@ -21,14 +21,14 @@ if (!defined('GLPI_ROOT')) {
     die("Sorry. You can't access directly to this file");
 }
 
-class PluginLinesmanagerExtensionmobility extends PluginLinesmanagerLine {
+class PluginLinesmanagerExtensionmobility extends CommonDropdown {
 
     /**
      * Belongs to this tables. Needed for search used and delete.
     * @var string
      */
     static public $belongsTo = array(
-        "PluginLinesmanagerLine"
+        // Removed reference to PluginLinesmanagerLine for GLPI 11 compatibility
     );
     
     function __construct() {
@@ -74,7 +74,7 @@ class PluginLinesmanagerExtensionmobility extends PluginLinesmanagerLine {
      *
      * @param $input datas used to update the item
      *
-     * @return the modified $input array
+    * @return array Modified input array
      */
     function prepareInputForAdd($input) {
         $input['name'] = $input['description'];
@@ -86,7 +86,7 @@ class PluginLinesmanagerExtensionmobility extends PluginLinesmanagerLine {
      *
      * @param $input datas used to update the item
      *
-     * @return the modified $input array
+    * @return array Modified input array
      * */
     function prepareInputForUpdate($input) {
         $input['name'] = $input['description'];

@@ -26,7 +26,7 @@ if (!defined('GLPI_ROOT')) {
  *
  * @author Javier Samaniego García <jsamaniegog@gmail.com>
  */
-class PluginLinesmanagerNumplan extends PluginLinesmanagerLine {
+class PluginLinesmanagerNumplan extends CommonDropdown {
     
     /**
      * Name for profile rights.

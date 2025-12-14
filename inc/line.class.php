@@ -1,5 +1,11 @@
 
+
 <?php
+
+// Ensure GLPI_ROOT is defined for CLI/install context
+if (!defined('GLPI_ROOT')) {
+    define('GLPI_ROOT', dirname(__DIR__, 2));
+}
 
 // GLPI core and plugin class imports for static analysis and runtime
 if (!defined('ERROR')) {
@@ -119,6 +125,7 @@ class PluginLinesmanagerLine extends CommonDropdown {
         );
 
         $config_datas = PluginLinesmanagerConfig::getConfigData();
+        if (!is_array($config_datas)) $config_datas = [];
         $on_change_number = '';
         if (!empty($config_datas['fill_line_information'])) {
             $on_change_number = '$.ajax({

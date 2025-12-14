@@ -26,7 +26,7 @@ if (!defined('GLPI_ROOT')) {
  *
  * @author Javier Samaniego García <jsamaniegog@gmail.com>
  */
-class PluginLinesmanagerLocation extends PluginLinesmanagerLine {
+class PluginLinesmanagerLocation extends CommonDropdown {
     
     function __construct() {
         parent::__construct();

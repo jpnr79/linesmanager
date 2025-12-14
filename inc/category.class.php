@@ -1,4 +1,10 @@
+
 <?php
+// Always require the parent class first for plugin inheritance
+if (!defined('GLPI_ROOT')) {
+    define('GLPI_ROOT', dirname(__DIR__, 2));
+}
+require_once GLPI_ROOT . '/plugins/linesmanager/inc/line.class.php';
 
 /*
  * Copyright (C) 2017 Javier Samaniego García <jsamaniegog@gmail.com>
@@ -17,11 +23,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+
 if (!defined('GLPI_ROOT')) {
     die("Sorry. You can't access directly to this file");
 }
 
-class PluginLinesmanagerCategory extends PluginLinesmanagerLine {
+// Ensure parent class is loaded with absolute path for GLPI autoload/install context
+if (!class_exists('PluginLinesmanagerLine')) {
+    require_once GLPI_ROOT . '/plugins/linesmanager/inc/line.class.php';
+}
+
+class PluginLinesmanagerCategory extends CommonDropdown {
 
     /**
      * Belongs to this tables. Needed for search used and delete.

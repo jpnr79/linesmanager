@@ -103,7 +103,8 @@ class PluginLinesmanagerLine extends CommonDropdown {
         
         $this->attributes = array(
             'id' => array('name' => 'ID', 'hidden' => true),
-            'numplan' => array('name' => __("Number", "linesmanager"),
+            'numplan' => array(
+                'name' => __("Number", "linesmanager"),
                 'mandatory' => true,
                 'type' => 'dropdown',
                 'forcegroupby' => true,
@@ -118,9 +119,6 @@ class PluginLinesmanagerLine extends CommonDropdown {
                     'field_tooltip' => array('number', 'vip'),
                     'on_change' => $on_change_number
                 )
-            ),
-            // ...existing code...
-        );
             ),
             'name' => array('name' => __("Name", "linesmanager"), 'mandatory' => true),
             'surname' => array('name' => __("Surname", "linesmanager"), 'mandatory' => true),

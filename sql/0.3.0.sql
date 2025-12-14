@@ -4,5 +4,4 @@ UPDATE `glpi_plugin_linesmanager_lines` l INNER JOIN `glpi_computers` c         
 UPDATE `glpi_plugin_linesmanager_lines` l INNER JOIN `glpi_phones` c            SET l.`states_id` = c.states_id WHERE l.itemtype = 'Phone' and l.items_id = c.id;
 UPDATE `glpi_plugin_linesmanager_lines` l INNER JOIN `glpi_peripherals` c       SET l.`states_id` = c.states_id WHERE l.itemtype = 'Peripheral' and l.items_id = c.id;
 UPDATE `glpi_plugin_linesmanager_lines` l INNER JOIN `glpi_networkequipments` c SET l.`states_id` = c.states_id WHERE l.itemtype = 'NetworkEquipment' and l.items_id = c.id;
-UPDATE `glpi_plugin_linesmanager_lines` l INNER JOIN `glpi_softwares` c         SET l.`states_id` = c.states_id WHERE l.itemtype = 'Software' and l.items_id = c.id;
 

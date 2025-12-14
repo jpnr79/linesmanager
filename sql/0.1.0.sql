@@ -82,6 +82,8 @@ CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_lines` (
     `items_id` int(11) default NULL,
     `itemtype` varchar(100) default NULL,
     `entities_id` int(11) NOT NULL default 0,
+    `locations_id` int(11) unsigned NOT NULL default 0,
+    `states_id` int(11) unsigned NOT NULL default 0,
     `name` varchar(200) NOT NULL default '',
     `surname` varchar(200) NOT NULL default '',
     `numplan` integer NOT NULL,

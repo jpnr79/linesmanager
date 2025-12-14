@@ -67,9 +67,10 @@ class PluginLinesmanagerLine extends CommonDropdown {
         parent::__construct();
 
         // only show numbers assigned to active entities
+        $activeEntities = isset($_SESSION['glpiactiveentities']) && is_array($_SESSION['glpiactiveentities']) ? $_SESSION['glpiactiveentities'] : array();
         $this->condition_to_load_numplan = "`range` in (SELECT id "
             . "FROM " . PluginLinesmanagerRange::getTable() . " "
-            . "WHERE ( entities_id in (" . implode(",", $_SESSION['glpiactiveentities']) . ") "
+            . "WHERE ( entities_id in (" . implode(",", $activeEntities) . ") "
             . "OR id in (SELECT r.id "
             . " FROM `glpi_plugin_linesmanager_ranges` r, `glpi_entities` e "
             . " WHERE r.entities_id = e.id "

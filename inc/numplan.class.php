@@ -78,7 +78,7 @@ class PluginLinesmanagerNumplan extends PluginLinesmanagerLine {
         return _n('Number', 'Numbers', $nb, 'linesmanager');
     }
     
-    static function canView() {
+    static function canView(): bool {
         return true;
     }
     

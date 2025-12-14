@@ -994,10 +994,6 @@ class PluginLinesmanagerLine extends CommonDropdown {
     }
 
     // --- STUBS for missing methods and static analysis compatibility ---
-    public static function getTable() {
-        // Return the table name for this plugin object
-        return 'glpi_plugin_linesmanager_lines';
-    }
 
     public static function canUpdate() {
         // Fallback: always allow update for static analysis
@@ -1014,8 +1010,4 @@ class PluginLinesmanagerLine extends CommonDropdown {
         return true;
     }
 
-    public function find($criteria = [], $options = []) {
-        // Fallback: return empty array for static analysis
-        return [];
-    }
 }

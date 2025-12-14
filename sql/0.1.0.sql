@@ -50,4 +50,5 @@ CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_lines` (
     `forwardtimeout` time default null,
     `timeslot` integer default null,
     `ddiin` integer default NULL,
-    `ddiout` integer default NULL,
+    `ddiout` integer default NULL
+)ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

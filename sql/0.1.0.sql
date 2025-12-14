@@ -1,3 +1,53 @@
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_categories` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` varchar(255) NOT NULL,
+    `description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_linegroups` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_algorithms` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` varchar(255) NOT NULL,
+    `description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_pickupgroups` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_extensionmobilities` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `loginduration` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_forwards` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `numplan` int(11) unsigned NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_timeslots` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `description` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_timeperiods` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `description` varchar(255) NOT NULL,
+    `time_start` time NOT NULL,
+    `time_end` time NOT NULL,
+    `dayofweek_start` tinyint(1) NOT NULL,
+    `dayofweek_end` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_ddis` (
+    `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `ddi_number` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `glpi_plugin_linesmanager_configs` (
     `id` int(11) unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,

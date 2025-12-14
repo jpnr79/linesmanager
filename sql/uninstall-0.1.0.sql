@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_configs`;
-DROP TABLE IF EXISTS `glpi_plugin_linesmanager_profiles`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_ranges`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_numplans`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_lines`;
@@ -12,4 +11,5 @@ DROP TABLE IF EXISTS `glpi_plugin_linesmanager_linegroups`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_algorithms`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_pickupgroups`;
 DROP TABLE IF EXISTS `glpi_plugin_linesmanager_ddis`;
+-- Clean up logs
 DELETE FROM `glpi_logs` WHERE itemtype like 'PluginLinesmanager%';

@@ -57,7 +57,7 @@ class PluginLinesmanagerState extends PluginLinesmanagerLine {
         return State::getTypeName($nb);
     }
     
-    function canEdit($ID) {
+    function canEdit($ID): bool {
         return false;
     }
 }

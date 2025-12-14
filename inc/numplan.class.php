@@ -82,7 +82,7 @@ class PluginLinesmanagerNumplan extends PluginLinesmanagerLine {
         return true;
     }
     
-    static function canCreate() {
+    static function canCreate(): bool {
         return false;
     }
     

@@ -84,7 +84,7 @@ class PluginLinesmanagerLine extends CommonDropdown {
 
         $config_datas = PluginLinesmanagerConfig::getConfigData();
         $on_change_number = '';
-        if ($config_datas['fill_line_information']) {
+        if (!empty($config_datas['fill_line_information'])) {
             $on_change_number = '$.ajax({
                         url:  \"' . $CFG_GLPI["root_doc"] . '/plugins/linesmanager/ajax/copyData.php\",
                         success: function(data) {
@@ -118,6 +118,9 @@ class PluginLinesmanagerLine extends CommonDropdown {
                     'field_tooltip' => array('number', 'vip'),
                     'on_change' => $on_change_number
                 )
+            ),
+            // ...existing code...
+        );
             ),
             'name' => array('name' => __("Name", "linesmanager"), 'mandatory' => true),
             'surname' => array('name' => __("Surname", "linesmanager"), 'mandatory' => true),
@@ -225,7 +228,7 @@ class PluginLinesmanagerLine extends CommonDropdown {
                 )
             ),
             'locations_id' => array(
-                'name' => Location::getTypeName(1),
+                'name' => PluginLinesmanagerLocation::getTypeName(1),
                 'type' => 'dropdown',
                 'foreingkey' => array(
                     'item' => 'PluginLinesmanagerLocation',
@@ -237,7 +240,7 @@ class PluginLinesmanagerLine extends CommonDropdown {
                 'getAddSearchOptions' => false
             ),
             'states_id' => array(
-                'name' => State::getTypeName(1),
+                'name' => PluginLinesmanagerState::getTypeName(1),
                 'type' => 'dropdown',
                 'foreingkey' => array(
                     'item' => 'PluginLinesmanagerState',
@@ -658,7 +661,7 @@ class PluginLinesmanagerLine extends CommonDropdown {
         return "ID: " . $this->fields["id"] . ", " 
             . _n('Number', 'Numbers', 1, 'linesmanager') . ": " 
             . PluginLinesmanagerUtilform::getForeingkeyName(
-                $this->fields["numplan"], $this->attributes['numplan']
+                $this->fields["numplan"] ?? null, $this->attributes['numplan'] ?? []
             );
     }
 

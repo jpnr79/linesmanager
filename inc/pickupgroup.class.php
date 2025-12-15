@@ -24,6 +24,12 @@ if (!defined('GLPI_ROOT')) {
 class PluginLinesmanagerPickupgroup extends CommonDropdown {
 
     /**
+     * Explicit properties to avoid dynamic property creation on PHP 8.2+
+     */
+    public $attributes = [];
+    public $condition_to_load_numplan = '';
+
+    /**
      * Belongs to this tables. Needed for search used and delete.
      * @var type 
      */
@@ -34,7 +40,7 @@ class PluginLinesmanagerPickupgroup extends CommonDropdown {
     function __construct() {
         parent::__construct();
 
-        $condition_to_load_numplan = str_replace("only_pickup=0", "only_pickup=1", $this->condition_to_load_numplan);
+        $condition_to_load_numplan = str_replace("only_pickup=0", "only_pickup=1", $this->condition_to_load_numplan ?? '');
         
         $this->attributes = array(
             'id' => array('name' => 'ID', 'hidden' => true),

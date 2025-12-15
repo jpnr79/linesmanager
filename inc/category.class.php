@@ -36,6 +36,12 @@ if (!class_exists('PluginLinesmanagerLine')) {
 class PluginLinesmanagerCategory extends CommonDropdown {
 
     /**
+     * Explicit properties to avoid dynamic property creation on PHP 8.2+
+     */
+    public $attributes = [];
+    public $condition_to_load_numplan = '';
+
+    /**
      * Belongs to this tables. Needed for search used and delete.
     * @var string
      */

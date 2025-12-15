@@ -24,6 +24,12 @@ if (!defined('GLPI_ROOT')) {
 class PluginLinesmanagerTimeslot extends CommonDropdown {
 
     /**
+     * Explicit properties to avoid dynamic property creation on PHP 8.2+
+     */
+    public $attributes = [];
+    public $condition_to_load_numplan = '';
+
+    /**
      * Belongs to this tables. Needed for search used and delete.
     * @var string
      */

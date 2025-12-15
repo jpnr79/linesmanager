@@ -467,7 +467,7 @@ class PluginLinesmanagerLine extends CommonDropdown {
      * @param int $withtemplate
      * @return bool
      */
-    function displayTabContentForItem($item, $tabnum = 1, $withtemplate = 0) {
+    public static function displayTabContentForItem($item, $tabnum = 1, $withtemplate = 0) {
         $line = new PluginLinesmanagerLine();
         
         // opening form
@@ -995,17 +995,17 @@ class PluginLinesmanagerLine extends CommonDropdown {
 
     // --- STUBS for missing methods and static analysis compatibility ---
 
-    public static function canUpdate() {
+    public static function canUpdate(): bool {
         // Fallback: always allow update for static analysis
         return true;
     }
 
-    public static function canCreate() {
+    public static function canCreate(): bool {
         // Fallback: always allow create for static analysis
         return true;
     }
 
-    public static function canPurge() {
+    public static function canPurge(): bool {
         // Fallback: always allow purge for static analysis
         return true;
     }

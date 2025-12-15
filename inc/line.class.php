@@ -782,16 +782,16 @@ class PluginLinesmanagerLine extends CommonDropdown {
         global $DB;
 
         if (isset($this->fields['itemtype'])
-            and in_array($this->fields['itemtype'], PluginLinesmanagerUtilsetup::getAssets())
+            and in_array($this->fields['itemtype'] ?? '', PluginLinesmanagerUtilsetup::getAssets())
         ) {
-            $itemtype = $this->fields['itemtype'];
+            $itemtype = $this->fields['itemtype'] ?? '';
 
             $query = "SELECT description, n.number, lg_n.number as linegroup "
                 . "FROM glpi_plugin_linesmanager_lines l "
                 . "LEFT JOIN glpi_plugin_linesmanager_numplans n ON l.numplan = n.id "
                 . "LEFT JOIN glpi_plugin_linesmanager_linegroups lg ON l.linegroup = lg.id "
                 . "LEFT JOIN glpi_plugin_linesmanager_numplans lg_n ON lg.numplan = lg_n.id "
-                . "WHERE itemtype='$itemtype' AND items_id=" . $this->fields['items_id'];
+                . "WHERE itemtype='$itemtype' AND items_id=" . $this->fields['items_id'] ?? '';
 
             $contact = "";
             $contact_num = "";
@@ -833,7 +833,7 @@ class PluginLinesmanagerLine extends CommonDropdown {
                 if ($history == 1) {
                     $query = "SELECT contact, contact_num ";
                     $query .= "FROM " . $itemtype::getTable() . " ";
-                    $query .= "WHERE id=" . $this->fields['items_id'];
+                    $query .= "WHERE id=" . $this->fields['items_id'] ?? '';
 
                     if ($result = $DB->query($query)) {
                         $data = $result->fetch_assoc();
@@ -842,7 +842,7 @@ class PluginLinesmanagerLine extends CommonDropdown {
 
                 $query = "UPDATE " . $itemtype::getTable() . " ";
                 $query .= "SET contact='$contact', contact_num='$contact_num' ";
-                $query .= "WHERE id=" . $this->fields['items_id'];
+                $query .= "WHERE id=" . $this->fields['items_id'] ?? '';
 
                 $DB->query($query);
 
@@ -850,13 +850,13 @@ class PluginLinesmanagerLine extends CommonDropdown {
                 if ($history == 1 and isset($data)) {
                     if (isset($data['contact']) and $data['contact'] != $contact) {
                         $this->logHistory(
-                            $itemtype, $this->fields['items_id'], 'contact', $data['contact'], $contact
+                            $itemtype, $this->fields['items_id'] ?? '', 'contact', $data['contact'], $contact
                         );
                     }
 
                     if (isset($data['contact_num']) and $data['contact_num'] != $contact_num) {
                         $this->logHistory(
-                            $itemtype, $this->fields['items_id'], 'contact_num', $data['contact_num'], $contact_num
+                            $itemtype, $this->fields['items_id'] ?? '', 'contact_num', $data['contact_num'], $contact_num
                         );
                     }
                 }
@@ -896,8 +896,8 @@ class PluginLinesmanagerLine extends CommonDropdown {
         global $DB;
 
         if (isset($this->fields['items_id']) and isset($this->fields['itemtype'])) {
-            $itemtype = $this->fields['itemtype'];
-            $items_id = $this->fields['items_id'];
+            $itemtype = $this->fields['itemtype'] ?? '';
+            $items_id = $this->fields['items_id'] ?? '';
 
             // for logs
             if ($history == 1) {

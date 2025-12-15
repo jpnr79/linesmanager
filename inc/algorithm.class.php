@@ -28,6 +28,11 @@ if (!defined('GLPI_ROOT')) {
  */
 class PluginLinesmanagerAlgorithm extends CommonDropdown {
 
+    /**
+     * Explicit properties to avoid dynamic property creation on PHP 8.2+
+     */
+    public $attributes = [];
+
     function __construct() {
         parent::__construct();
 

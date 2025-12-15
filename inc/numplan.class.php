@@ -27,6 +27,11 @@ if (!defined('GLPI_ROOT')) {
  * @author Javier Samaniego García <jsamaniegog@gmail.com>
  */
 class PluginLinesmanagerNumplan extends CommonDropdown {
+
+    /**
+     * Explicit properties to avoid dynamic property creation on PHP 8.2+
+     */
+    public $attributes = [];
     
     /**
      * Name for profile rights.

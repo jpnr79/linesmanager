@@ -88,7 +88,7 @@ class PluginLinesmanagerRange extends CommonDBTM {
 
             return __("The specified range is already in use by: ", "linesmanager")
                 . Html::link(
-                    $entity->fields['completename'] ?? '', Entity::getFormURLWithID($entity_id))
+                    ($entity->fields['completename'] ?? ''), Entity::getFormURLWithID($entity_id))
                 . ".";
         }
 
@@ -111,8 +111,8 @@ class PluginLinesmanagerRange extends CommonDBTM {
         
         // hack to load ID -1 without Notice in logs and for hidden id of entity
         $this->fields['id'] = $ID;
-        $this->fields['entities_id'] = ($ID == -1) ? $options['entities_id'] : $this->fields['entities_id'] ?? '' ;
-        $this->fields['is_recursive'] = (isset($this->fields['is_recursive'])) ? $this->fields['is_recursive'] ?? '' : 0;
+        $this->fields['entities_id'] = ($ID == -1) ? $options['entities_id'] : ($this->fields['entities_id'] ?? '') ;
+        $this->fields['is_recursive'] = (isset($this->fields['is_recursive'])) ? ($this->fields['is_recursive'] ?? '') : 0;
         
         // show header table and init form
         $this->showFormHeader($options);

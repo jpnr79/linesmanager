@@ -46,7 +46,7 @@ class PluginLinesmanagerEntity extends CommonDBTM {
         return $array_ret;
     }
 
-    static function displayTabContentForItem(CommonGLPI $item, $tabnum = 1, $withtemplate = 0) {
+    public static function displayTabContentForItem(CommonGLPI $item, $tabnum = 1, $withtemplate = 0): bool {
         if ($item->getID() > -1) {
             $pmEntity = new PluginLinesmanagerEntity();
             $pmEntity->showForm($item->getID());
